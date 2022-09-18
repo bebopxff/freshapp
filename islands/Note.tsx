@@ -20,8 +20,11 @@ const styles = {
 };
 
 const NOTE_KEY = "note-on-fresh";
-const loadNote = () => localStorage && localStorage.getItem(NOTE_KEY);
-const dumpNote = (text) => localStorage && localStorage.setItem(NOTE_KEY, text);
+// const loadNote = () => localStorage && localStorage.getItem(NOTE_KEY);
+// const dumpNote = (text) => localStorage && localStorage.setItem(NOTE_KEY, text);
+
+const loadNote = () => "load";
+const dumpNote = (text) => {};
 
 interface PageProps {
   text: string;
@@ -45,6 +48,7 @@ export default function Page(props: PageProps) {
   );
 
   useEffect(() => {
+    console.log(localStorage);
     setLoading(localStorage === undefined);
   }, [localStorage]);
 
