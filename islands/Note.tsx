@@ -20,8 +20,8 @@ const styles = {
 };
 
 const NOTE_KEY = "note-on-fresh";
-const loadNote = () => localStorage.getItem(NOTE_KEY);
-const dumpNote = (text) => localStorage.setItem(NOTE_KEY, text);
+const loadNote = () => localStorage?.getItem(NOTE_KEY);
+const dumpNote = (text) => localStorage?.setItem(NOTE_KEY, text);
 
 interface PageProps {
   text: string;
