@@ -31,7 +31,9 @@ interface PageProps {
 }
 
 export default function Page(props: PageProps) {
-  const [loading, setLoading] = useState(localStorage === undefined);
+  // console.log("load", localStorage);
+  const [loading, setLoading] = useState(undefined);
+  // const [loading, setLoading] = useState(localStorage === undefined);
   const [text, setText] = useState(loadNote() || props.text);
   const handleChange = (e) => {
     console.log("save...");
