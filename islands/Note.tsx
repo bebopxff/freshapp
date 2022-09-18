@@ -20,10 +20,16 @@ const styles = {
 };
 
 const NOTE_KEY = "note-on-fresh";
+// https://deno.com/deploy/docs/tutorial-firebase
+// currently, Deploy doesn't offer any persistence outside of in-memory allocation. In addition it doesn't currently offer the global localStorage or sessionStorage, which is what is used by Firebase to store the authentication information.
+// https://deno.com/deploy/docs/runtime-fs
 // const loadNote = () => localStorage && localStorage.getItem(NOTE_KEY);
 // const dumpNote = (text) => localStorage && localStorage.setItem(NOTE_KEY, text);
 
-const loadNote = () => "load";
+// const loadNote = await Deno.readTextFile(
+//           new URL(`file://${Deno.cwd()}/note/${NOTE_KEY}`)
+// )
+const loadNote = () => "";
 const dumpNote = (text) => {};
 
 interface PageProps {
@@ -31,7 +37,7 @@ interface PageProps {
 }
 
 export default function Page(props: PageProps) {
-  // console.log("load", localStorage);
+  console.log("load", localStorage);
   const [loading, setLoading] = useState(undefined);
   // const [loading, setLoading] = useState(localStorage === undefined);
   const [text, setText] = useState(loadNote() || props.text);
